@@ -269,17 +269,30 @@ img {
   }
 
   .filter .title{
-    border: 0px;  
+    /* padding-left: 0px;   */
     display: flex;
     justify-content: space-between;
   }
 
   .filter .title.secondary{
-    border: 0px;  
+    /* border: 0px;   */
+    padding-right: unset;
+  }
+
+  .filter .title:not(.secondary){
+    padding-right: 0px;
   }
 
   .filter .title :not(:first-child){
     display: block;
+  }
+
+  #static-menu li{
+    margin-right: 7%;
+  }
+
+  #static-menu{
+    margin-right: 15%;
   }
 
   .navbar-links.active {
@@ -308,5 +321,14 @@ img {
   .navbar-links.active li div {
     border-bottom: 0px;
     padding: 0rem 0.4rem;
+}
+
+.toggle-button .MuiButton-root{
+  width: max-content;
+  height: 95%
+}
+
+#myTopnav .title{
+  border: 0px;
 }
 }

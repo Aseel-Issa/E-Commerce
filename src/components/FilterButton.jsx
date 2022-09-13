@@ -29,7 +29,7 @@ export default function FilterButton({ title, options, applyChange }) {
 
     const btnTitle = title + (selected > 0 ? '('+selected+')': '')
 
-    const highlightColor = 'title' + (isClicked ? ' secondary' : '')
+    const highlightColor = 'title' + (isClicked || selected ? ' secondary' : '')
     const expand = isClicked ? '-' : '+'
     return (
         <div className='filter'>
