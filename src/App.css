@@ -169,6 +169,11 @@ img {
   list-style: none;
 }
 
+.MuiButton-root{
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
 .toggle-button{
   display: none;
 
@@ -276,4 +281,23 @@ img {
   #bar{
     display: flex;
   }
+
+  .apply{
+    margin-left: 0%;
+  }
+
+  .navbar-links.active .filterList{
+    position: unset;
+    border: 0px;
+    background-color: unset;
+  }
+
+  .navbar-links.active .filterList .arrow-up{
+    display: none;
+  }
+
+  .navbar-links.active li div {
+    border-bottom: 0px;
+    padding: 0rem 0.4rem;
+}
 }
