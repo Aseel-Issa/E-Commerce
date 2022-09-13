@@ -268,7 +268,7 @@ img {
 
   .navbar-links li div{
     padding: 0.5rem 1rem;
-    border-bottom: 2px solid #e47af7;
+    /* border-bottom: 2px solid #e47af7; */
   }
 
   .filter .title{
@@ -343,4 +343,14 @@ img {
   padding-left: 1%;
   padding-right: 1%;
 }
+
+.navbar-links.active li{
+  border-bottom: 1px solid;
+  border-bottom: 2px solid #e47af7;
 }
+}
+
+/* position: absolute;
+background: white;
+top: 17%;
+width: 83%; */
