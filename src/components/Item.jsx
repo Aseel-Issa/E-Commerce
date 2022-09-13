@@ -8,5 +8,6 @@ export default function Item ({item}){
             <img src={item.img}></img>
             <p>{item.price}$</p>
         </div>
+        //
     )
 }
