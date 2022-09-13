@@ -12,7 +12,7 @@ export default function FilterButton({ title, options, applyChange }) {
     useEffect(() => {
         const initialSelectedOptions = options.filter(o => {return o.selected === true}).length
         setSelected(initialSelectedOptions)
-    })
+    }, [])
 
     
 
