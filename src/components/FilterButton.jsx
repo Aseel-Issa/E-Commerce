@@ -1,12 +1,18 @@
 import FilterList from './FilterList'
 import Button from '@material-ui/core/Button'
-
-import { useState, useEffect } from 'react'
+import useOnClickOutside from '../customHooks/useOnClickOutside'
+import { useState, useEffect, useRef, createRef } from 'react'
 
 export default function FilterButton({ title, options, applyChange }) {
     
     const [isClicked, setIsClicked] = useState(false)
     const [selected, setSelected] = useState(0)
+
+    let node = createRef(null)
+    // close menue when clicking outside of it
+    useOnClickOutside(node, '#myTopnav', ()=>{
+        setIsClicked(false)
+    }) 
 
     // determine how many option has been selected
     useEffect(() => {
@@ -32,9 +38,9 @@ export default function FilterButton({ title, options, applyChange }) {
     const highlightColor = 'title' + (isClicked || selected ? ' secondary' : '')
     const expand = isClicked ? '-' : '+'
     return (
-        <div className='filter'>
+        <div className='filter' ref={node}>
         <a className={highlightColor} href="#" onClick={() => { setIsClicked(!isClicked) }}><span>{btnTitle}</span><span>{expand}</span></a>
-            {isClicked ? <FilterList options={options} applyFilters={applyFilters}></FilterList> : null}
+        {isClicked ? <FilterList options={options} applyFilters={applyFilters}></FilterList> : null}
         </div>
     )
 }
