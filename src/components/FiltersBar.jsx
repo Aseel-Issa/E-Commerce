@@ -7,12 +7,12 @@ export default function FilterBar({ AllFilters, applyChange }) {
 
     const filterNames = Object.keys(AllFilters)
 
-    const [isResponsive, setIsResponsive] = useState(false)
+    const [isInsideMoreFilters, setInsideMoreFilters] = useState(false)
 
 
     // called when a user click on more filters button
     const handleMoreFilters = () => {
-        setIsResponsive(!isResponsive)
+        setInsideMoreFilters(!isInsideMoreFilters)
     }
 
     return (
@@ -27,7 +27,7 @@ export default function FilterBar({ AllFilters, applyChange }) {
             <Button color="secondary" variant="outlined" onClick={handleMoreFilters}>More Filters</Button>
         </a>
         </div>
-        <div className={isResponsive? 'navbar-links active' : 'navbar-links'} id="myTopnav">
+        <div className={isInsideMoreFilters? 'navbar-links active' : 'navbar-links'} id="myTopnav">
             <ul>
 
                 {filterNames.slice(2).map(filter => {

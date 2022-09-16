@@ -10,15 +10,16 @@ export default function FilterButton({ title, options, applyChange }) {
 
     let node = createRef(null)
     // close menue when clicking outside of it
-    useOnClickOutside(node, '#myTopnav', ()=>{
+    useOnClickOutside(node, '.navbar-links.active', ()=>{
         setIsClicked(false)
     }) 
 
     // determine how many option has been selected
     useEffect(() => {
+        // console.log('clearing btns')
         const initialSelectedOptions = options.filter(o => {return o.selected === true}).length
         setSelected(initialSelectedOptions)
-    }, [])
+    })
 
     
 
